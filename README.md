@@ -16,7 +16,7 @@ git clone https://github.com/J-B-Mugundh/HacktoberFestProjectsDump.git
 - Navigate to the project directory.
 
 ```terminal
-cd Hacktoberfest2024
+cd HacktoberFestProjectsDump
 ```
 
 - Create a new branch
