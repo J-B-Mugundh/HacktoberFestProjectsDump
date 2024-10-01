@@ -44,3 +44,13 @@ git push origin my-new-branch
 - Create a new pull request from your forked repository
 
 <br>
+
+## Need Help? 🤔
+
+If you need any help, feel free to reach out! You can:
+
+- Open an issue in the repository describing your problem.
+- Ask your question in the discussions tab (if enabled).
+- Contact the maintainer via email or social media.
+
+We're here to help you contribute successfully! 🙌
