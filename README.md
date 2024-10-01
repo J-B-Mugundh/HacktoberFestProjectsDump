@@ -10,7 +10,7 @@
 - Clone it on your local machine
 
 ```terminal
-git clone https://github.com/J-B-Mugundh/HacktoberFestProjectsDump.git
+git clone https://github.com/<your-username>/HacktoberFestProjectsDump.git
 ```
 
 - Navigate to the project directory.
