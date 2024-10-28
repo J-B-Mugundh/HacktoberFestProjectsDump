@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .chat-box {
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        .message {
+            margin-bottom: 10px;
+        }
+
+        .message p {
+            margin: 5px 0;
+        }
+
+        .message span {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 50px);
+            padding: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chat-box">
+        <div id="chat-log"></div>
+        <input type="text" id="message" placeholder="Type your message here...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        async function sendMessage() {
+            const messageInput = document.getElementById('message');
+            const message = messageInput.value;
+            if (message) {
+                const response = await fetch('/send_message', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message })
+                });
+                const data = await response.json();
+                const chatLog = document.getElementById('chat-log');
+                const newMessage = `
+                    <div class="message">
+                        <p><span>You:</span> ${data.message}</p>
+                        <p><span>Emotion:</span> ${data.emotion}</p>
+                    </div>
+                `;
+                chatLog.innerHTML += newMessage;
+                messageInput.value = '';
+            }
+        }
+    </script>
+</body>
+
+</html>
